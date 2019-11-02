@@ -26,18 +26,22 @@ class Newtab {
 		fetch( 'https://dv-hacks.glitch.me/', {
 			method: 'GET'
 		}).then(data => {
-			return data.json()}
-		).then(json=> {
+			return data.json()
+		}).then(json=> {
 			let results = json;
-			this.updateResults(results);
-			console.log(results);
+			this.updateResults(results, 8);
 			fuse = new Fuse(results, options);
 		});
 	}
-	updateResults(results) {
+	updateResults(results, limit = null) {
 		$(".search-results").empty();
 		if (results.length) {
-			results.forEach((elem) => {
+			results.forEach((elem, index) => {
+				if (limit) {
+					if (index >= limit) {
+						return false;
+					}
+				}
 				let hasFaviconClass = elem.faviconurl == null ? 'no-favicon' : '';
 				$('.search-results').append(`
 					<li class="result" data-keywords="${elem.keywords}">
