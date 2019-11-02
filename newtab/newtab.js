@@ -36,6 +36,7 @@ class Newtab {
 	updateResults(results, limit = null) {
 		$(".search-results").empty();
 		if (results.length) {
+			results.reverse();
 			results.forEach((elem, index) => {
 				if (limit) {
 					if (index >= limit) {
