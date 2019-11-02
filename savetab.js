@@ -7,6 +7,7 @@ let saveObj = {
 	"url": document.URL,
 	"scrollX": window.scrollX,
 	"scrollY": window.scrollY,
+	"savedBy": "cool_user_420",
 	"date": new Date(),
 	"keywords": []
 }
