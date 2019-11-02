@@ -1,0 +1,46 @@
+:root {
+  --black: #181a1b;
+  --white: #f4f5f5;
+  --pure-white: #ffffff;
+
+  --radius: 20px;
+
+  --padding: 1rem;
+
+  --font-size: 12pt;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 300;
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/Inter-Light.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/Inter-Regular.otf")
+    format("opentype");
+}
+/* @font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  src: url("/fonts/Inter-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  src: url("/fonts/Inter-SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  src: url("/fonts/Inter-Bold.otf") format("opentype");
+} */
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #ff0000;
+  background: var(--white);
+}
