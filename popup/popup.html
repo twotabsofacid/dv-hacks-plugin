@@ -5,7 +5,6 @@
       @import "../css/style-guide.css";
       body {
         width: 500px;
-        height: 500px;
 
         border: 5px solid var(--pure-white);
       }
@@ -29,19 +28,30 @@
         display: flex;
         justify-content: space-between;
       }
+      .search-input {
+        box-shadow: var(--drop-shadow);
+      }
+      .add-button {
+        box-shadow: var(--drop-shadow);
+      }
+      p {
+        padding: var(--padding);
+        max-width: 40ch;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="section flex">
         This page is not saved.
-        <button>Add +</button>
+        <button class="add-button">Add +</button>
       </div>
       <div class="section">
         <div class="search-input-wrapper">
-          <input type="text" class="search-input" />
+          <input type="text" class="search-input" value="Python" />
           <span class="search-input-accent"></span>
         </div>
+        <p>8 other pages in Dream Team match <b class="accent1">python</b></p>
       </div>
     </div>
   </body>

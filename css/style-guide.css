@@ -7,7 +7,7 @@
   --radius: 40px;
 
   --padding: 1rem;
-  --padding-top: calc(var(--padding) * 0.9);
+  --padding-top: calc(var(--padding) * 0.7);
 
   --font-size: 12pt;
 
@@ -110,4 +110,9 @@ input.search-input {
   height: 41px;
   border-radius: var(--radius);
   background-color: var(--accent1);
+}
+
+b.accent1 {
+  color: var(--accent1);
+  font-weight: 500;
 }
