@@ -1,9 +1,14 @@
 'use strict';
 
-class Savetab {
-	constructor() {
-		console.log('hello world!!');
-	}
+// So if you have any variables or whatever it gets fucked up :(
+// console.log('we are saving this mother fucker!!!');
+let saveObj = {
+	"title": document.title,
+	"url": document.URL,
+	"scrollX": window.scrollX,
+	"scrollY": window.scrollY,
+	"date": new Date(),
+	"keywords": []
 }
 
-new Savetab();
+console.log(saveObj);
