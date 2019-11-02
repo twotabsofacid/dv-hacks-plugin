@@ -10,7 +10,7 @@
     "default_popup": "popup/popup.html"
   },
   "chrome_url_overrides": {
-    "newtab": "newtab.html"
+    "newtab": "newtab/newtab.html"
   },
   "content_scripts": [
     {
