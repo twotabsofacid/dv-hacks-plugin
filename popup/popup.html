@@ -2,13 +2,28 @@
   <head>
     <script src="popup.js"></script>
     <style type="text/css">
-      @import "chrome-extension://__MSG_@@extension_id__/css/style-guide.css";
+      @import "../css/style-guide.css";
       body {
-        width: 400px;
+        width: 500px;
+        height: 500px;
+
+        border: 5px solid var(--pure-white);
+      }
+      .container {
+        margin: var(--padding);
+      }
+      .section:not(first-of-type) {
+        margin-bottom: var(--padding);
       }
     </style>
   </head>
   <body>
-    <h1>Demo Popup</h1>
+    <div class="container">
+      <div class="section flex">
+        This page is not saved.
+        <button>Add +</button>
+      </div>
+      <div class="section">Test</div>
+    </div>
   </body>
 </html>
