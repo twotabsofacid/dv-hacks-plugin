@@ -6,12 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/style-guide.css">
+    <style>
+    	body {
+    		background-color: var(--white);
+    	}
+    	.search-input-wrapper {
+    		margin: 45px auto 0 auto;
+    	}
+    	.search-input {
+    		box-shadow: var(--drop-shadow);
+    	}
+    </style>
   </head>
   <body>
   	<div class="search-input-wrapper">
   		<input type="text" class="search-input">
   		<span class="search-input-accent"></span>
   	</div>
+  	<ul class="search-results">
+  		<li class="result"></li>
+  	</ul>
     <script src="newtab.js"></script>
   </body>
 </html>
