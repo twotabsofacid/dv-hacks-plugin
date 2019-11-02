@@ -2,9 +2,10 @@
 	"name": "DV Hacks Plugin",
 	"version": "1.0",
 	"description": "Build an Extension!",
-	"permissions": ["storage", "activeTab"],
+	"permissions": ["storage", "activeTab", "storage"],
 	"background": {
-		"scripts": ["background.js"]
+		"scripts": ["background.js"],
+		"persistent": false
 	},
 	"browser_action": {},
 	"content_scripts": [
