@@ -7,4 +7,4 @@ class SearchKeywords {
 	}
 }
 
-new searchKeywords();
+new SearchKeywords();
