@@ -16,6 +16,15 @@
     	.search-input {
     		box-shadow: var(--drop-shadow);
     	}
+      .result-box {
+        max-width: 1264px;
+        margin: 0 auto 16px auto;
+      }
+      .result-box h3 {
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 110%;
+      }
       .search-results {
         display: flex;
         flex-direction: row;
@@ -62,6 +71,9 @@
   		<input type="text" class="search-input">
   		<span class="search-input-accent"></span>
   	</div>
+    <div class="result-box">
+      <h3>Default Board</h3>
+    </div>
   	<ul class="search-results">
   	</ul>
     <script src="../inc/jquery.js"></script>
