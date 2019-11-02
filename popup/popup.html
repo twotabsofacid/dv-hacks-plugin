@@ -10,10 +10,24 @@
         border: 5px solid var(--pure-white);
       }
       .container {
-        margin: var(--padding);
+        margin: calc(var(--padding) * 0.5);
       }
       .section:not(first-of-type) {
         margin-bottom: var(--padding);
+      }
+      .section {
+        padding-top: var(--padding-top);
+        padding-bottom: var(--padding-top);
+        padding-left: var(--padding);
+        padding-right: var(--padding);
+        border: 2px solid var(--pure-white);
+        border-radius: var(--radius);
+        background: var(--white);
+        box-shadow: var(--drop-shadow);
+      }
+      .section.flex {
+        display: flex;
+        justify-content: space-between;
       }
     </style>
   </head>
@@ -23,7 +37,12 @@
         This page is not saved.
         <button>Add +</button>
       </div>
-      <div class="section">Test</div>
+      <div class="section">
+        <div class="search-input-wrapper">
+          <input type="text" class="search-input" />
+          <span class="search-input-accent"></span>
+        </div>
+      </div>
     </div>
   </body>
 </html>
