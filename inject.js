@@ -1,8 +1,10 @@
-window.saveLink = function(favicon) {
+window.saveLink = favicon => {
+  console.log(`saving link:\n${window.location.href}`);
+
   let json = JSON.stringify({
     title: document.title,
     url: window.location.href,
-    scroll: {
+    scrollPos: {
       x: window.scrollX,
       y: window.scrollY
     },
