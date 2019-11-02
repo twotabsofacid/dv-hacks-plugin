@@ -1,0 +1,19 @@
+{
+	"name": "DV Hacks Plugin",
+	"version": "1.0",
+	"description": "Build an Extension!",
+	"permissions": ["storage", "activeTab"],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": true
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.google.com/search*"
+			],
+			"js": ["inc/jquery.js", "searchkeywords.js"]
+		}
+	],
+	"manifest_version": 2
+}
