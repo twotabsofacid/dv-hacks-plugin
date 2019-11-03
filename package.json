@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "keyword-extractor": "0.0.18",
     "rake-js": "^0.1.1"
   }
 }

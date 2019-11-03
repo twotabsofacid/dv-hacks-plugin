@@ -19,7 +19,7 @@
     },
     {
       "matches": ["<all_urls>"],
-      "js": ["inject.js"]
+      "js": ["inject.built.js"]
     }
   ],
   "web_accessible_resources": ["css/*"],

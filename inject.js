@@ -1,6 +1,14 @@
+const keywordExtractor = require('keyword-extractor');
+
 window.saveLink = favicon => {
   console.log(`saving link:\n${window.location.href}`);
-
+  let keywordExtractorRaw = keywordExtractor.extract(document.getElementsByTagName('body')[0].innerText, {
+  	language: 'english',
+  	remove_digits: true,
+  	return_changed_case:true,
+  	remove_duplicates: false
+  });
+  let keywords = keywordExtractorRaw.filter((a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i);
   let json = JSON.stringify({
     title: document.title,
     url: window.location.href,
@@ -9,7 +17,7 @@ window.saveLink = favicon => {
       y: window.scrollY
     },
     savedBy: "",
-    keywords: "",
+    keywords: keywords,
     searchTerms: "",
     board: "",
     faviconurl: favicon
