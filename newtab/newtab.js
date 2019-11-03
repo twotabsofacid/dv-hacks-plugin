@@ -5,7 +5,7 @@ let options = {
 	shouldSort: true,
 	threshold: 0.4,
 	location: 0,
-	distance: 100,
+	distance: 1000,
 	maxPatternLength: 64,
 	minMatchCharLength: 1,
 	keys: [

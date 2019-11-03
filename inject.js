@@ -23,7 +23,7 @@ window.saveLink = async (favicon, theuser) => {
       y: window.scrollY
     },
     savedBy: theuser,
-    keywords: keywordsObject,
+    keywords: keywords,
     searchTerms: "",
     board: "",
     faviconurl: favicon
