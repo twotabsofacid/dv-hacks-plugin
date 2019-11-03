@@ -5,7 +5,7 @@ This page is not saved.
 <button id="add-button" class="add-button">Add +</button>
 </div>`;
 
-const saved = `<div class="section flex">
+const saved = `<div class="section flex green">
 This page has been saved
 <span>&#x2713;</span>
 </div>`;
@@ -31,7 +31,7 @@ document.addEventListener("click", event => {
 window.onload = () => {
   chrome.tabs.getSelected(null, async function(tab) {
     let api = "https://dv-hacks.glitch.me/find?url=";
-    let query = api + tab.url;
+    let query = api + tab.url.split("?")[0];
     await fetch(query, {
       method: "GET"
     })
@@ -46,3 +46,5 @@ window.onload = () => {
       });
   });
 };
+
+savedStatus.innerHTML = notSaved;

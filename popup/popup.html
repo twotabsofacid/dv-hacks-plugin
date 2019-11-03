@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta charset="utf-8"/>
     <style type="text/css">
       @import "../css/style-guide.css";
       body {
@@ -13,9 +14,16 @@
       .section:not(first-of-type) {
         margin-bottom: var(--padding);
       }
+      .search-input-wrapper {
+        align-items: center;
+        max-width:100%;
+        padding-top:var(--padding);
+        padding-bottom:var(--padding);
+        border:2px solid var(--pure-white);
+      }
       .section {
-        padding-top: var(--padding-top);
-        padding-bottom: var(--padding-top);
+        padding-top: var(--padding);
+        padding-bottom: var(--padding);
         padding-left: var(--padding);
         padding-right: var(--padding);
         border: 2px solid var(--pure-white);
@@ -26,12 +34,15 @@
       .section.flex {
         display: flex;
         justify-content: space-between;
+        align-items: center;
       }
-      .search-input {
-        box-shadow: var(--drop-shadow);
+      .section.green {
+        background: var(--green);
+        color: var(--pure-white);
       }
       .add-button {
         box-shadow: var(--drop-shadow);
+        display:inline;
       }
       p {
         padding: var(--padding);
@@ -42,12 +53,19 @@
   <body>
     <div class="container">
       <div id="save_status"></div>
-      <div class="section">
-        <div class="search-input-wrapper">
-          <input type="text" class="search-input" value="Python" />
-          <span class="search-input-accent"></span>
-        </div>
-        <p>8 other pages in Dream Team match <b class="accent1">python</b></p>
+      <div class="section" style="display:flex;align-items:center;">
+        <span
+          class="search-input-accent"
+          style="width:30px;height:30px;display:inline-block;margin-right:0.6rem;"
+        ></span>
+        <span
+          ><span style="color:var(--accent1)">Dream Team</span>
+          (Default Board)
+        </span>
+      </div>
+      </div>
+      <div class="section" style="background:transparent;border:0;box-shadow:none;text-align:center;">
+        <a href="/newtab/newtab.html" target="_blank" style="color:var(--gray);text-decoration:none;">Go to Dashboard →</a>
       </div>
     </div>
     <script src="popup.js"></script>

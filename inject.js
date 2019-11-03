@@ -1,5 +1,26 @@
 const keywordExtractor = require("keyword-extractor");
 
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return "";
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+window.addEventListener("load", event => {
+  console.log("window loaded");
+  let x = getParameterByName("scrollX");
+  let y = getParameterByName("scrollY");
+  window.scrollTo({
+    top: y,
+    left: x,
+    behavior: "smooth"
+  });
+});
+
 window.saveLink = async (favicon, theuser) => {
   console.log(`saving link:\n${window.location.href}`);
   let keywordExtractorRaw = keywordExtractor.extract(
@@ -14,7 +35,7 @@ window.saveLink = async (favicon, theuser) => {
   let keywords = keywordExtractorRaw.filter(
     (a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i
   );
-  keywords = keywords.join(', ');
+  keywords = keywords.join(", ");
   let json = JSON.stringify({
     title: document.title,
     url: window.location.href,

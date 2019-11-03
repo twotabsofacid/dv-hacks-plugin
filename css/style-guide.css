@@ -2,7 +2,10 @@
   --black: #181a1b;
   --white: #f4f5f5;
   --pure-white: #ffffff;
+  --gray: #aeb4b6;
   --accent1: #e0743f;
+  --green: #bfc86a;
+  --accent3: var(--green);
 
   --radius: 40px;
 
@@ -11,7 +14,7 @@
 
   --font-size: 12pt;
 
-  --drop-shadow: 0px 0px 10px #181a1b10;
+  --drop-shadow: 0px 0px 10px #181a1b15;
 }
 
 @font-face {
@@ -88,26 +91,29 @@ input:focus {
   position: relative;
   /* margin: 46px auto 0 auto; */
   max-width: 444px;
-  height: 51px;
+  display: flex;
+  background: var(--pure-white);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  /* height: 51px; */
 }
 input.search-input {
-  display: block;
-  width: 100%;
-  height: 100%;
+  flex-grow: 1;
+  display: inline-block;
   border: none;
   font-size: 18px;
-  border-radius: 24px;
   box-sizing: border-box;
-  padding-left: 4rem;
 }
 .search-input-accent {
+  flex-shrink: 0;
   content: "";
-  display: block;
-  position: absolute;
+  display: inline-block;
+  /* position: absolute;
   left: 6px;
-  top: 5px;
-  width: 41px;
-  height: 41px;
+  top: 5px; */
+  /* width: 41px; */
+  color: var(--pure-white);
+  padding: calc(var(--padding) * 0.6) calc(var(--padding) * 0.8);
   border-radius: var(--radius);
   background-color: var(--accent1);
 }
