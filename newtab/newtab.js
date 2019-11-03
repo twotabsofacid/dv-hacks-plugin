@@ -20,7 +20,7 @@ class Newtab {
 		this.getResultsFromDb();
 		$('input').keyup((e) => {
 			let inputtext = $('.search-input').val();
-			this.updateResults();
+			console.log('what the fuck');
 			if ($(".search-input").val().length >= 1) {
 				this.updateResults();
 			} else {
@@ -43,13 +43,13 @@ class Newtab {
 	}
 	updateResults(limit = null) {
 		$(".search-results").empty();
-		let reverseResults;
+		let loopResults;
 		if ($(".search-input").val().length >= 1) {
-			reverseResults = giveBackReversed(fuse.search($(".search-input").val()));
+			loopResults = fuse.search($(".search-input").val());
 		} else {
-			reverseResults = giveBackReversed(results);
+			loopResults = results;
 		}
-		reverseResults.forEach((elem, index) => {
+		loopResults.forEach((elem, index) => {
 			if (limit) {
 				if (index >= limit) {
 					return false;
