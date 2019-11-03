@@ -3,7 +3,7 @@
 let results = [];
 let options = {
 	shouldSort: true,
-	threshold: 0.4,
+	threshold: 0.2,
 	location: 0,
 	distance: 1000,
 	maxPatternLength: 64,
