@@ -21,7 +21,7 @@ class Newtab {
       if ($(".search-input").val().length >= 1) {
         this.updateResults();
       } else {
-        this.updateResults(100);
+        this.updateResults(12);
       }
     });
   }
@@ -36,7 +36,7 @@ class Newtab {
         // Setting results!!
         results = json;
         // console.log(json);
-        this.updateResults(100);
+        this.updateResults(12);
         fuse = new Fuse(results, options);
       });
   }
