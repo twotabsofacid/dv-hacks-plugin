@@ -15,6 +15,7 @@ window.saveLink = async (favicon, theuser) => {
   let keywords = keywordExtractorRaw.filter(
     (a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i
   );
+  keywords = keywords.join(', ');
   let json = JSON.stringify({
     title: document.title,
     url: window.location.href,
