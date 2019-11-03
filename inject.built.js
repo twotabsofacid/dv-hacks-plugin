@@ -10,8 +10,6 @@ window.saveLink = favicon => {
   	remove_duplicates: false
   });
   let keywords = keywordExtractorRaw.filter((a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i);
-  console.log('keyword stuff...', keywordExtractorRaw);
-  console.log('keywords short', keywords.join(', '));
   let json = JSON.stringify({
     title: document.title,
     url: window.location.href,

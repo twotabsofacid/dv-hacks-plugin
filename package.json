@@ -1,10 +1,10 @@
 {
-  "name": "DV Hacks Plugin",
+  "name": "DV_Hacks_Plugin",
   "version": "1.0.0",
   "description": "",
   "main": "background.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify inject.js -o inject.built.js"
   },
   "author": "",
   "license": "ISC",
