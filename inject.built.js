@@ -1,15 +1,20 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const keywordExtractor = require('keyword-extractor');
+const keywordExtractor = require("keyword-extractor");
 
-window.saveLink = favicon => {
+window.saveLink = async (favicon, theuser) => {
   console.log(`saving link:\n${window.location.href}`);
-  let keywordExtractorRaw = keywordExtractor.extract(document.getElementsByTagName('body')[0].innerText, {
-  	language: 'english',
-  	remove_digits: true,
-  	return_changed_case:true,
-  	remove_duplicates: false
-  });
-  let keywords = keywordExtractorRaw.filter((a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i);
+  let keywordExtractorRaw = keywordExtractor.extract(
+    document.getElementsByTagName("body")[0].innerText,
+    {
+      language: "english",
+      remove_digits: true,
+      return_changed_case: true,
+      remove_duplicates: false
+    }
+  );
+  let keywords = keywordExtractorRaw.filter(
+    (a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i
+  );
   let json = JSON.stringify({
     title: document.title,
     url: window.location.href,
@@ -17,7 +22,7 @@ window.saveLink = favicon => {
       x: window.scrollX,
       y: window.scrollY
     },
-    savedBy: "",
+    savedBy: theuser,
     keywords: keywords,
     searchTerms: "",
     board: "",
@@ -26,7 +31,7 @@ window.saveLink = favicon => {
 
   console.log(json);
 
-  fetch("https://dv-hacks.glitch.me/save", {
+  await fetch("https://dv-hacks.glitch.me/save", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

@@ -1,14 +1,19 @@
-const keywordExtractor = require('keyword-extractor');
+const keywordExtractor = require("keyword-extractor");
 
-window.saveLink = favicon => {
+window.saveLink = async (favicon, theuser) => {
   console.log(`saving link:\n${window.location.href}`);
-  let keywordExtractorRaw = keywordExtractor.extract(document.getElementsByTagName('body')[0].innerText, {
-  	language: 'english',
-  	remove_digits: true,
-  	return_changed_case:true,
-  	remove_duplicates: false
-  });
-  let keywords = keywordExtractorRaw.filter((a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i);
+  let keywordExtractorRaw = keywordExtractor.extract(
+    document.getElementsByTagName("body")[0].innerText,
+    {
+      language: "english",
+      remove_digits: true,
+      return_changed_case: true,
+      remove_duplicates: false
+    }
+  );
+  let keywords = keywordExtractorRaw.filter(
+    (a, i, aa) => aa.indexOf(a) === i && aa.lastIndexOf(a) !== i
+  );
   let json = JSON.stringify({
     title: document.title,
     url: window.location.href,
@@ -16,7 +21,7 @@ window.saveLink = favicon => {
       x: window.scrollX,
       y: window.scrollY
     },
-    savedBy: "",
+    savedBy: theuser,
     keywords: keywords,
     searchTerms: "",
     board: "",
@@ -25,7 +30,7 @@ window.saveLink = favicon => {
 
   console.log(json);
 
-  fetch("https://dv-hacks.glitch.me/save", {
+  await fetch("https://dv-hacks.glitch.me/save", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

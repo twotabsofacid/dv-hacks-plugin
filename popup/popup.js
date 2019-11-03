@@ -11,17 +11,19 @@ This page has been saved
 </div>`;
 
 document.addEventListener("click", event => {
-  // if click occurs on our add-button button
-
   let buttonClicked = event.target.classList.contains("add-button");
 
+  // if click occurs on our add-button button
   if (buttonClicked) {
     chrome.tabs.getSelected(null, function(tab) {
-      console.log(tab);
-      chrome.tabs.executeScript(tab.tabId, {
-        code: "saveLink('" + tab.favIconUrl.toString() + "');"
+      chrome.identity.getProfileUserInfo(function(userInfo) {
+        let user = userInfo.email.toString() || "none";
+        let icon = tab.favIconUrl.toString();
+        chrome.tabs.executeScript(tab.tabId, {
+          code: `saveLink("${icon}", "${user}");`
+        });
+        savedStatus.innerHTML = saved;
       });
-      savedStatus.innerHTML = saved;
     });
   }
 });
