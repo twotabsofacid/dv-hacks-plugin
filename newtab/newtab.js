@@ -21,7 +21,7 @@ class Newtab {
       if ($(".search-input").val().length >= 1) {
         this.updateResults();
       } else {
-        this.updateResults(8);
+        this.updateResults(100);
       }
     });
   }
