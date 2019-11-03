@@ -10,7 +10,7 @@ let options = {
 	minMatchCharLength: 1,
 	keys: [
 		"title",
-		"keywords"
+		"keywords.data"
 	]
 };
 let fuse;
